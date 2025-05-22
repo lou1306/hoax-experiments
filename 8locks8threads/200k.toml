@@ -1,0 +1,8 @@
+# Main section (mandatory)
+[hoax]
+name = "8locks8threads, 200k"
+version = 1
+
+[[driver.txt]]
+aps = ["a", "end", "t0", "t1", "t2", "l0", "l1", "l2"]
+filename = "8locks8threads.200k.hoax.txt"

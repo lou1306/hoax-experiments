@@ -1,0 +1,20 @@
+HOA: v1
+name: "F(!end & !l0 & l1 & t0 & t1 & ((a | l0 | !l1 | !t0 | !t1) U (a & !l0 & l1 & (!t0 | !t1))))"
+States: 3
+Start: 1
+AP: 6 "a" "l0" "l1" "t0" "t1" "end"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic stutter-invariant terminal
+--BODY--
+State: 0 {0}
+[t] 0
+State: 1
+[!0 | 1 | !2 | !3 | !4 | 5] 1
+[0&!1&2&3&4&!5] 2
+State: 2
+[0&!1&2&!3 | 0&!1&2&!4] 0
+[!0&!1&2&3&4] 1
+[!0&!3 | !0&!4 | 0&3&4 | 1 | !2] 2
+--END--
