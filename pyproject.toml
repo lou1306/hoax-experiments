@@ -1,0 +1,14 @@
+[project]
+name = "hoax-experiment"
+version = "0.1.0"
+license = "MIT"
+description = "Experimental evaluation for the Hoax tool"
+readme = "README.md"
+requires-python = ">=3.12,<=3.12.3"
+dependencies = [
+    "hoax",
+    "pyfiglet>=1.0.2",
+]
+
+[tool.uv.sources]
+hoax = { git = "https://github.com/lou1306/hoax.git", rev = "7f3e239" }
