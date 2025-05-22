@@ -1,0 +1,3 @@
+[submodule "pycontract"]
+	path = pycontract
+	url = https://github.com/pyrv/pycontract.git
