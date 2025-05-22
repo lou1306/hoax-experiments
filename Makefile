@@ -28,7 +28,7 @@ $(LTL):
 	@uv run gen_ltl.py $(shell echo $@ | head -c1 ) > $@
 
 $(TRACES):
-	@uv run gen_trace.py $(shell echo $@ | sed 's/[^.]*\.\(.*\)k.txt/\1/')000 $(shell echo $@ | head -c1 ) > $@
+	@uv run gen_trace.py $(shell echo $@ | sed 's/[^.]*\.\(.*\)k.txt/\1/')000 $(shell echo $@ | head -c1 ) 0 > $@
 
 $(HOAX_TRACES): $(TRACES)
 	@uv run convert_trace.py $(subst .hoax.txt,.txt,$@) $(shell echo $@ | head -c1 ) > $@
