@@ -55,6 +55,7 @@ def bench_hoax(n, trace_size):
 
 
 def main():
+    print("tool,n,trace_size,time_seconds", file=stderr)
     for _ in range(100):
         for n in N:
             for size in SIZES:
