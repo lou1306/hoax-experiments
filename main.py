@@ -9,12 +9,11 @@ from hoax.drivers import EndOfFiniteTrace
 
 from pycontract_monitor import M1, convert_line
 
-RUNS = 100
+RUNS = 50
 N = (2, 4, 8)
 SIZES = (50, 100, 200)
 
 print("[INFO] Setting up all automata. This might take a while")
-monitor = M1()
 all_automata = {}
 
 with ThreadPoolExecutor() as exc:
@@ -28,6 +27,7 @@ print("[INFO] Done.")
 
 def bench_pycontracts(n, trace_size):
     name = f"{n}locks{n}threads"
+    monitor = M1()
     with open(Path(name) / f"{name}.{trace_size}k.txt") as trace_file:
         t = datetime.now()
         for ln in trace_file:
@@ -56,7 +56,7 @@ def bench_hoax(n, trace_size):
 
 def main():
     print("tool,n,trace_size,time_seconds", file=stderr)
-    for _ in range(100):
+    for _ in range(RUNS):
         for n in N:
             for size in SIZES:
                 bench_pycontracts(n, size)
