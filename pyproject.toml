@@ -11,4 +11,5 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-hoax = { git = "https://github.com/lou1306/hoax.git", rev = "e3ae14c" }
+hoax = { git = "https://github.com/lou1306/hoax.git", rev = "3aa7f27" }
+
